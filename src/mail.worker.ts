@@ -1,6 +1,7 @@
 import { Worker, QueueScheduler } from "bullmq";
 import config from "./config";
 import { MailJob } from "./mail-job.interface";
+import { logger } from './utils/logging'
 
 export const worker = new Worker<MailJob>(
   config.queueName,
@@ -16,4 +17,4 @@ export const scheduler = new QueueScheduler(config.queueName, {
   connection: config.connection,
 });
 
-console.log("Worker listening for jobs");
+logger.info("Worker listening for jobs");

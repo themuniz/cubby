@@ -5,6 +5,7 @@ import nodemailer from "nodemailer";
 import config from "./config";
 import puppeteer from "puppeteer";
 import Mail from "nodemailer/lib/mailer";
+import { logger } from "./utils/logging";
 
 let transporter: Mail;
 
