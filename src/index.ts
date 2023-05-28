@@ -1,4 +1,7 @@
+import * as dotenv from 'dotenv'
 import { worker } from "./mail.worker";
+
+dotenv.config()
 
 worker.on("completed", (job) =>
   console.log(
