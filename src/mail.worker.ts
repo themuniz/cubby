@@ -1,4 +1,4 @@
-import { Worker, QueueScheduler } from "bullmq";
+import { Worker, QueueScheduler } from 'bullmq';
 import config from "./config";
 import { MailJob } from "./mail-job.interface";
 import { logger } from './utils/logging'

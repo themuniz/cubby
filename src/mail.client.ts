@@ -17,9 +17,8 @@ export class MailbotClient {
   }
 
   async enqueue(jobName: string, mail: MailJob, jobOpts?: JobsOptions) {
-    const response = await this.queue.add(jobName, mail);
-    console.log(response)
-    logger.info(`Enqueued an email sending to ${mail.mailOpts.to}`, { response });
+    await this.queue.add(jobName, mail);
+    logger.info(`Enqueued an email sending to ${mail.mailOpts.to}`);
   }
 
   close() {
